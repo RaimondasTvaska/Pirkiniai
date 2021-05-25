@@ -172,8 +172,10 @@ function editTodo() {
     let items = JSON.parse(sessionStorage.getItem('data'));
     let item = {
         "id": document.getElementById("todo-id").value,
-        "name": document.getElementById("product").value,
-        "description": document.getElementById("category").value
+        "product": document.getElementById("product").value,
+        "category": document.getElementById("category").value,
+        "quantity": document.getElementById("quantity").value,
+        
     }
     
     
