@@ -5,6 +5,7 @@ function createPurchaseTable() {
 
     let generatedHtml = "";
     let items = JSON.parse(localStorage.getItem('data'));
+    let select = document.getElementById("select");
     //console.log(items);
 
 
@@ -216,6 +217,8 @@ function activateEditMode(item) {
     document.getElementById("submit-btn").style = "display:none";
     //Ypdate those Html elements with todo.name, todo.description
     //Unhide the EditButton
+    document.getElementById("form").classList.remove('hidden');
+    document.getElementById("show").classList.add('hidden');
     
 }
 
@@ -230,6 +233,7 @@ function editTodo() {
         "product": document.getElementById("product").value,
         "category": document.getElementById("category").value,
         "quantity": document.getElementById("quantity").value,
+        "status": 0
         
     }
     
@@ -249,8 +253,15 @@ function editTodo() {
     clearForm();
     document.getElementById("edit-btn").style = "display:none";
     document.getElementById("submit-btn").style = "";
+    document.getElementById("form").classList.add('hidden');
+    show.classList.remove('hidden');
 
 }
+
+let select = document.getElementById("select");
+select.addEventListener('change', function(){
+    createPurchaseTable();
+})
 
 
 function deleteEntry(id) {
@@ -301,5 +312,6 @@ function categorySelect() {
 
     categories.forEach(category =>{
         HTML += `<option value="${category}">${category}</option>`;
-    })
+    });
+    select.innerHTML += HTML;
 }

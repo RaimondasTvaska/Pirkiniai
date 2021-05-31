@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <title>Prekių sąrašas</title>
+    <style>
+        h2{
+            color:rgb(69, 206, 15);
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="text-center mb-4">Pirkiniai</h2>
+        <div class="row">
+            <div class="col-3"></div>
+            <div id="form" class="col-6 hidden">
+                <form>
+                    <div class="mb-3">
+                        <label class="form-label">Prekė</label>
+                        <input id="product" type="text" class="form-control" placeholder="prekė">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Kiekis</label>
+                        <input id="product" type="text" class="form-control" placeholder="vnt., kg, l">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Kategorija</label>
+                        <input id="product" type="text" class="form-control" placeholder="mėsa, žuvis, pienas, duona">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Pasirenkama Kategorija</label>
+                        <select class="form-select" id="select2"></select>
+                            <option value="0">nesirenku senos kategorijos</option>
+                    </div>
+                    <div class="col-3"></div>
+                    <div id="submit-btn" onclick="addNewProduct(); return false;" value="test" class="btn btn-success">Įrašyti</div>
+                    <div id="edit-btn" onclick="editProduct(); return false;" style="display: none;" class="btn btn-outline-warning">Korekcija</div>
+                    <div id="done-btn" onclick="doneEntry(); return false;" style="display: none;" class="btn btn-outline-success">Atlikta</div>
+                    <div id="hide" class="btn btn-outline-primary">Slėpti</div>
+                </form>
+            </div>
+            <div class="col-3"></div>
+        </div>
+        <div class="row">
+            <div class="col-5"></div>
+            <div class="col-4">
+            <div id="show" class="btn btn-success">Pildymo forma</div>
+        </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+      crossorigin="anonymous"></script>
+</body>
+</html>
